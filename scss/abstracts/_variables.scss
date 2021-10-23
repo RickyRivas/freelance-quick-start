@@ -25,14 +25,15 @@ $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #d63384;
-$red: #dc3545;
+$red: #ef2e2d;
 $orange: #fd7e14;
 $yellow: #ffc107;
-$green: #198754;
+$green: #5aa26e;
 $teal: #20c997;
 $cyan: #0dcaf0;
+$brown: #c1a38b;
 
-// Color object referencing colors above ^
+
 $colors: ("blue": $blue,
     "indigo": $indigo,
     "purple": $purple,
@@ -47,8 +48,9 @@ $colors: ("blue": $blue,
     "gray": $gray-600,
     "gray-dark": $gray-800);
 // theme-color-variables
-$primary: $blue;
-$secondary: $gray-600;
+$primary: #2d2d2d;
+$primary-light: $gray-200;
+$secondary: $red;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -103,7 +105,17 @@ $h6-font-size: $font-size-base;
 $padding-sm: .5rem;
 $padding-md: 1rem;
 $padding-lg: 2rem;
-
+$padding-xl: 4rem;
 $margin-sm: .5rem;
 $margin-md: 1rem;
 $margin-lg: 2rem;
+$margin-xl: 4rem;
+// Text color
+$text-color: #4e4e4e;
+// div
+$dark-div-bg: #172933;
+$brown-div-bg: #2d2d2d;
+// font
+$font-one: 'Boska', serif;
+// h2 psuedo background
+$psuedo-bg: linear-gradient(to right,#ed5034 0%,#ed5034 74%,rgba(255,255,255,0) 74%,rgba(255,255,255,0) 87%,#ed5034 87%);

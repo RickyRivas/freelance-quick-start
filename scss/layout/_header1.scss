@@ -11,10 +11,9 @@
   }
 
   header {
-    position: fixed;
+    position: absolute;
     z-index: 5;
     width: 100vw;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 
     & .is-active {
@@ -24,18 +23,37 @@
 
     & nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       background-color: transparent;
       box-shadow: none;
       border: 0;
       padding: 0.5em;
       width: 100%;
-      height: 8vh;
+      height: 10vh;
 
       & p {
         color: black;
         font-size: 1.2em;
+      }
+
+      .logo-wrapper {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 5rem;
+        }
+
+        p {
+          color: white;
+          text-transform: uppercase;
+          display: none;
+        }
       }
 
 
@@ -53,7 +71,7 @@
         align-items: center;
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
-        background-color: white;
+        background-color: $primary;
         list-style: none;
 
         & li {
@@ -68,8 +86,13 @@
           font-size: 1.2em;
 
           & a {
-            color: black;
+            color: white;
             text-decoration: none;
+
+            &:hover {
+              color: $primary;
+              transition: color .5s;
+            }
           }
 
         }
@@ -83,22 +106,34 @@
         }
       }
     }
+
+    .navlinks-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      transform: translateX(100%);
+      background: rgba(0, 0, 0, .4);
+      z-index: 99;
+
+      &.is-active {
+        transform: translate(0%);
+        animation: fadeIn 0.5s ease-in;
+      }
+    }
   }
 
-  // Keyframes Animation for NAV
-  @keyframes navLinkFade {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateX(50px);
     }
 
     to {
       opacity: 1;
-      transform: translateX(0px);
     }
   }
-
-  //
 }
 
 @media (min-width: 768px) {
@@ -114,7 +149,7 @@
   }
 
   header {
-    position: fixed;
+    position: absolute;
     z-index: 5;
     width: 100vw;
     height: 80px;
@@ -129,7 +164,7 @@
 
     & nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       background-color: transparent;
       box-shadow: none;
@@ -138,7 +173,24 @@
       padding: 0.5em;
       width: 100%;
 
+      .logo-wrapper {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        img {
+          width: 5rem;
+        }
+
+        p {
+          color: white;
+          text-transform: uppercase;
+          display: none;
+        }
+      }
 
       .nav-links {
         margin: 0;
@@ -154,7 +206,7 @@
         align-items: center;
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
-        background-color: #000;
+        background-color: $dark-div-bg;
         list-style: none;
 
         & li {
@@ -169,7 +221,7 @@
           font-size: 1.2em;
 
           & a {
-            color: black;
+            color: white;
             text-decoration: none;
           }
 
@@ -177,7 +229,6 @@
 
         & li:nth-child(1) {
           margin-top: 3em;
-          border-bottom: 1px solid black;
         }
 
         &.is-active {
@@ -202,7 +253,7 @@
 
   header {
     z-index: 5;
-    position: relative;
+    position: absolute;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -217,7 +268,7 @@
 
     & nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       background-color: transparent;
       box-shadow: none;
@@ -228,13 +279,26 @@
       height: 100%;
       max-width: 1200px;
       margin: auto;
+      position: relative;
 
-      & p {
-        display: block;
-        color: black;
-        font-size: 1.2em;
+      .logo-wrapper {
+        position: absolute;
+        left: 2rem;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 5rem;
+        }
+
+        p {
+          color: white;
+          text-transform: uppercase;
+          display: none;
+        }
       }
-
 
       .nav-links {
         margin: 0;
@@ -256,22 +320,12 @@
         & li {
           opacity: 1;
           padding: .5em;
-          text-align: right;
-          width: 90%;
-          font-weight: unset;
-          display: flex;
-          justify-content: flex-end;
-          align-items: flex-end;
-          font-size: 1em;
+          width: max-content;
+          font-size: $font-weight-base * 2;
 
           & a {
-            color: black;
+            color: White;
             text-decoration: none;
-
-            &:hover {
-              color: black;
-              transition: color .5s;
-            }
           }
 
 
@@ -302,14 +356,14 @@
     z-index: 100;
   }
 
-header {
+  header {
     z-index: 5;
-    position: relative;
+    position: absolute;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 100px;
     width: 100vw;
 
     & .is-active {
@@ -318,8 +372,9 @@ header {
     }
 
     & nav {
+      position: relative;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       background-color: transparent;
       box-shadow: none;
@@ -331,7 +386,24 @@ header {
       max-width: 1200px;
       margin: auto;
 
+       .logo-wrapper {
+        position: absolute;
+        left: 2rem;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        img {
+          width: 5rem;
+        }
+
+        p {
+          color: white;
+          text-transform: uppercase;
+          display: none;
+        }
+      }
       .nav-links {
         margin: 0;
         position: relative;
@@ -358,10 +430,9 @@ header {
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
-          font-size: 1em;
 
           & a {
-            color: black;
+            color: white;
             text-decoration: none;
           }
 
@@ -389,7 +460,7 @@ header {
   font: inherit;
   color: inherit;
   text-transform: none;
-  background-color: #000;
+  background-color: transparent;
   border: 0;
   margin: 0;
   overflow: visible;
@@ -407,7 +478,7 @@ header {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: black;
+  background-color: white;
 }
 
 .hamburger-box {
@@ -417,7 +488,7 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .hamburger-inner {
@@ -431,7 +502,7 @@ header {
 .hamburger-inner::after {
   width: 40px;
   height: 3px;
-  background-color: black;
+  background-color: white;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
