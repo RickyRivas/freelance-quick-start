@@ -5,11 +5,6 @@
   padding: 0;
 }
 
-html, body {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 16px;
-}
-
 // Scale font-szie from a min of 16px (at 320px viewpoort) to a maximum of 22px (at a 1000px viewport)
 @media screen and (min-width: 320px) {
   html {
@@ -18,6 +13,6 @@ html, body {
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
 } 
