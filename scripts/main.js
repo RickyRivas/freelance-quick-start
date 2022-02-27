@@ -4,19 +4,17 @@ const burger = document.querySelector(".hamburger");
 const navOverlay = document.querySelector('.navlinks-overlay');
 const nav = document.querySelector(".nav-links");
 
-burger.addEventListener('click', () => {
+function toggleNav() {
     nav.classList.toggle('is-active');
     burger.classList.toggle('is-active');
     body.classList.toggle('body-fixed');
     navOverlay.classList.toggle('is-active');
-})
-navOverlay.addEventListener('click', () => {
-    nav.classList.toggle('is-active');
-    burger.classList.toggle('is-active');
-    body.classList.toggle('body-fixed');
-    navOverlay.classList.toggle('is-active');
-})
-// // Color theme toggle
+}
+burger.addEventListener('click', toggleNav)
+navOverlay.addEventListener('click', toggleNav)
+
+// Dark Mode
+
 // const themeToggle = document.querySelector('.theme-toggle');
 // const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 // const currentTheme = localStorage.getItem('theme');
